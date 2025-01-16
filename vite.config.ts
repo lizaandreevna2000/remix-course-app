@@ -27,8 +27,8 @@ export default defineConfig({
             route("analysis", "expenses/analysis.tsx");
             route(":id", "expenses/$id.tsx");
           });
-        });
-      },
+        }); 
+      }, 
     }),
     tsconfigPaths(),
   ],
