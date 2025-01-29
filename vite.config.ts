@@ -20,6 +20,11 @@ export default defineConfig({
       },
       routes(defineRoutes) {
         return defineRoutes((route) => {
+          route("/*", "routes/marketing/layout.tsx", () => {
+            route("", "routes/marketing/index.tsx", { index: true });
+            route("pricing", "routes/marketing/pricing.tsx");
+            route("auth", "routes/marketing/auth.tsx");
+          });
           route("expenses", "routes/expenses/layout.tsx", () => { 
             route("", "routes/expenses/index.tsx", { index: true });
             route("add", "routes/expenses/add.tsx");

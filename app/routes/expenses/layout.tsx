@@ -18,6 +18,7 @@ import ExpensesList from '~/components/expenses/ExpensesList';
 
 import styles from '~/styles/expenses.css';
 import type { LinksFunction } from "@remix-run/node";
+import ExpensesHeader from '~/components/navigation/ExpenesHeader';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles }
@@ -26,6 +27,7 @@ export const links: LinksFunction = () => [
 export default function ExpensesLayout() {
   return (
     <>
+      <ExpensesHeader />
       <Outlet />
       <main>
         <ExpensesList expenses={DUMMY_EXPENSES} />

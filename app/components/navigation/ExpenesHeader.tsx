@@ -1,31 +1,28 @@
 import { NavLink } from '@remix-run/react';
+
 import Logo from '../util/Logo';
 
-function MainHeader() {
+function ExpensesHeader() {
   return (
     <header id="main-header">
       <Logo />
       <nav id="main-nav">
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/expenses" end>
+              Manage Expenses
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/pricing">Pricing</NavLink>
+            <NavLink to="/expenses/analysis">Analyze Expenses</NavLink>
           </li>
         </ul>
       </nav>
       <nav id="cta-nav">
-        <ul>
-          <li>
-            <NavLink to="/auth" className="cta">
-              Login
-            </NavLink>
-          </li>
-        </ul>
+        <button className="cta">Logout</button>
       </nav>
     </header>
   );
 }
 
-export default MainHeader;
+export default ExpensesHeader;
