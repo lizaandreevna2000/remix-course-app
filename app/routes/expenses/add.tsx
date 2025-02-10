@@ -1,3 +1,4 @@
+import { ActionFunction } from '@remix-run/node';
 import { useNavigate } from '@remix-run/react';
 
 import ExpenseForm from '~/components/expenses/ExpenseForm';
@@ -15,4 +16,8 @@ export default function AddExpensesPage() {
       <ExpenseForm />
     </Modal>
   );
+}
+
+export const action: ActionFunction = async ({ request }) => {
+
 }
