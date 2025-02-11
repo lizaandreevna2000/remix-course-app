@@ -1,5 +1,5 @@
 export type ExpenseData = {
     title: string;
-    amount: number;
+    amount: string;
     date: string; // ISO format (YYYY-MM-DD)
 };
