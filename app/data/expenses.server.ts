@@ -13,3 +13,13 @@ export async function createExpense(expenseData: ExpenseData) {
         throw err;
     }
 }
+
+export async function getExpenses() {
+    try {
+        const expenses = await prisma.expense.findMany({orderBy: {date: 'desc'}});
+        return expenses;
+    } catch (err) {
+        console.error("Error creating expense:", err);
+        throw err;
+    }
+}

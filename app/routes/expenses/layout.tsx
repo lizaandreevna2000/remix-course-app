@@ -17,9 +17,10 @@ import { Link, Outlet } from '@remix-run/react';
 import ExpensesList from '~/components/expenses/ExpensesList';
 
 import styles from '~/styles/expenses.css';
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import ExpensesHeader from '~/components/navigation/ExpenesHeader';
 import { FaDownload, FaPlus } from 'react-icons/fa';
+import { getExpenses } from '~/data/expenses.server';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles }
@@ -45,4 +46,11 @@ export default function ExpensesLayout() {
       </main>
     </>
   );
+}
+
+export const loader = async ({
+  params,
+  request,
+}: LoaderFunctionArgs) => {
+  return await getExpenses();
 }
